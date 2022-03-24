@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/Style.css') }}">
+		<title>TARP PROJECT</title>
+		<style>
+			body {
+				padding: 25px;
+			}
+		</style>
+	</head>
+<body style="background-color:rgb(153, 147, 233);">
+<form action="/result" method="POST">
+    <div class="form__title" style="color:rgb(117, 6, 6);">Mortgage Prepayment Prediction Form</div>
+	<div class="two-col">
+		<div class="form__item1">
+			<label for="cs" class="form__label">Enter the Credit Score</label>
+			<input type="text" class="form__input" name="cs" id="cs" placeholder="Enter your Credit Score">
+			<span class="form__error">A sample error message</span>
+		  </div>
+		  <div class="form__item2">
+			<label for="mip" class="form__label">Enter the Mortgage Insurance Percentage</label>
+			<input type="text" class="form__input" name="mip" id="mip" placeholder="Enter your Mortgage Insurance Percentage">
+			<span class="form__error">A sample error message</span>
+		  </div>
+	</div>
+	<div class="two-col">
+	  <div class="form__item1">
+        <label for="numunits" class="form__label">Choose the Number of Units</label>
+        <input type="number" class="form__input form__input--small" name="numunits" id="numunits" min="1" max="4" placeholder="Choose the number of units? (Max. 4)">
+        <span class="form__error">A sample error message</span>
+      </div>
+	  <div class="form__item2">
+        <label for="oclv" class="form__label">Enter the Original Combined Loan To Value</label>
+        <input type="text" class="form__input" name="oclv" id="oclv" placeholder="Enter the Original Combined Loan To Value">
+        <span class="form__error">A sample error message</span>
+      </div>
+	</div>
+	<div class="two-col">
+	  <div class="form__item1">
+        <label for="or_upb" class="form__label">Enter the Original UPB</label>
+        <input type="text" class="form__input" name="or_upb" id="or_upb" placeholder="Enter the Original UPB">
+        <span class="form__error">A sample error message</span>
+      </div>
+	  <div class="form__item2">
+        <label for="olv" class="form__label">Enter the Original Loan to Value</label>
+        <input type="text" class="form__input" name="olv" id="olv" placeholder="Enter the Original Loan to Value">
+        <span class="form__error">A sample error message</span>
+      </div>
+	</div>
+	<div class="two-col">
+	  <div class="form__item1">
+        <label for="or_irate" class="form__label">Enter the Original Interest Rate</label>
+        <input type="text" class="form__input" name="or_irate" id="or_irate" placeholder="Enter the Original Interest Rate">
+        <span class="form__error">A sample error message</span>
+      </div>
+	  <div class="form__item2">
+        <label for="or_lterm" class="form__label">Enter the Original Loan term</label>
+        <input type="text" class="form__input" name="or_lterm" id="or_lterm" placeholder="Enter the Original Loan term">
+        <span class="form__error">A sample error message</span>
+      </div>
+	</div>
+	<div class="two-col">
+	  <div class="form__item1">
+		<label for="or_diratio" class="form__label">Original Debt to Income Ratio</label>
+		<input type="text" class="form__input" name="or_diratio" id="or_diratio" placeholder="Enter the Original Debt to Income Ratio">
+		<span class="form__error">A sample error message</span>
+	  </div>
+	  <div class="form__item2">
+		<label for="del" class="form__label">Delinquent</label>
+		<select class="form__input" id="del" name="del">
+			<option value="0">False</option>
+			<option value="1">True</option>
+		</select>
+		<span class="form__error">A sample error message</span>
+	  </div>
+	</div>
+	<div class="two-col">
+		<div class="form__item1">
+			<label for="hm_flag" class="form__label">First Time Homebuyer Flag</label>
+			<select class="form__input" id="hm_flag" name="hm_flag">
+				<option value="0">N</option>
+				<option value="1">NA</option>
+				<option value="2">Y</option>
+			</select>
+			<span class="form__error">A sample error message</span>
+		</div>
+		<div class="form__item2">
+			<div class="container">
+				<div class="center">
+				  <button class="form__btn" type="submit">Predict</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>
+</body>
+</html>
